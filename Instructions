@@ -1,0 +1,63 @@
+By utilizing Zapier, a cloud host (AWS/Linode), and GoPhish, ethical hackers and red teamers can create highly detailed spear phishing emails quickly and en mass. Many possible options exist, and this project will continue to receive advancements.
+
+What you'll need:
+A cloud host account (AWS, Linode, or your preference)
+Publicly facing Ubuntu machine (22.04+) with an IPv4 address for simplicity
+Unused domain name
+Zapier account
+MailGun Account
+
+Let's Begin:
+
+We will start with creating the heart of our machine, the GoPhish server. For this we will need a public Ubuntu 22.04+ machine, but you may use other versions or distributions if you're comfortable.
+My advice - Go with Linode for now, as I ran into problems hosting my own SMTP server in AWS (update: we will use MailGun instead of a self hosted SMTP server. This is far more simple and they are GoPhish friendly).
+
+If you are not familiar with setting up a basic cloud instance in Linode, check out my guide here:
+
+NOTE* Please take time to secure your linux server! The following guide is for demonstration at the Right of Boom conference, where time is limited. GoPhish will be run as the root user which I do not advise.
+
+You are welcome to remote into your machine however you want, but ssh will be easiest. Once inside your machine, execute the following commands:
+
+Update the system:
+sudo apt update && sudo apt upgrade -y
+
+Install required tools:
+sudo apt install unzip wget -y
+
+
+
+Download GoPhish (link may be different):
+wget https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit.zip
+
+Unzip the downloaded file: 
+unzip gophish-v0.12.1-linux-64bit.zip
+
+Change directory:
+cd gophish (if it didn't already extract to current directory)
+
+Make GoPhish executable:
+sudo chmod +x gophish
+
+The admin server settings are located in the config.json file in the GoPhish directory. We will need to edit some of these values.
+
+Open the Config File:
+
+sudo nano config.json
+
+Check the Admin Interface Configuration:
+
+Ensure the following is set:
+"admin_server": {
+    "listen_url": "0.0.0.0:3333",
+    "use_tls": true
+}
+0.0.0.0 allows the admin interface to be accessible from any IP address.
+
+Zapier will want a CSRF token for our GoPhish server, which will need to be defined in the config.json file.
+
+Start the GoPhish server:
+sudo ./gophish
+
+Note the login URL (default: https://<your-public-ip>:3333) and credentials (printed in the terminal).
+
+
