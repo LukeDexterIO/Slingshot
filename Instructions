@@ -5,6 +5,7 @@ A cloud host account (AWS, Linode, or your preference)
 Publicly facing Ubuntu machine (22.04+) with an IPv4 address for simplicity
 Unused domain name
 Zapier account
+AirTable Account
 MailGun Account
 
 Let's Begin:
@@ -24,9 +25,14 @@ sudo apt update && sudo apt upgrade -y
 Install required tools:
 sudo apt install unzip wget -y
 
+Optionally, update your UFW rules for security:
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 3333/tcp
+sudo ufw allow ssh
+sudo ufw enable
 
-
-Download GoPhish (link may be different):
+Download GoPhish (the release may be different by the time you are reading this):
 wget https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit.zip
 
 Unzip the downloaded file: 
@@ -41,7 +47,6 @@ sudo chmod +x gophish
 The admin server settings are located in the config.json file in the GoPhish directory. We will need to edit some of these values.
 
 Open the Config File:
-
 sudo nano config.json
 
 Check the Admin Interface Configuration:
@@ -53,11 +58,74 @@ Ensure the following is set:
 }
 0.0.0.0 allows the admin interface to be accessible from any IP address.
 
-Zapier will want a CSRF token for our GoPhish server, which will need to be defined in the config.json file.
+Zapier will want a CSRF token for our GoPhish server, which will need to be defined in the config.json file. You can create a CSRF token with the following command in Linux:
+openssl rand -hex 32
+
+Note down your CSRF token and include it in the config.json like so:
+<image>
 
 Start the GoPhish server:
 sudo ./gophish
 
-Note the login URL (default: https://<your-public-ip>:3333) and credentials (printed in the terminal).
+Note the login URL (default: https://<your-public-ip>:3333) and credentials (printed in the terminal). You will need to write these credentials down, as we will be logging into the GoPhish server with them.
 
+Access your login url via your web browser on port 3333
 
+Enter admin for the username and the credentials provided to you earlier by GoPhish.
+
+Change your password to something strong.
+
+We're in.
+
+Zapier Primer
+
+Head over to Zapier and create an account. The trial may limit how many actions a zap can have. A zap begins with a trigger event, which then waterfalls down through other events that you define. Zapier makes it easy to pass data along to each new event.
+
+Once your Zapier is created, head to the Home page, then click on Zaps in the left corner.
+<image>
+
+Click Create > New Zap in the top right. Feel free to create a folder for organizational purposes.
+
+Every Zap begins with a Trigger event. Different services have varying event types. There are many ways to start our Zap, but because this is originally for my presentation, we will start at a halfway point. Let me explain:
+
+We want to put our AI Automated Spear Phishing Campaign in action. While most of this is automated, where we START determines the level of automation implied in the project. This project can start at 1 of 2 points:
+
+1) We input something such as a domain name, and other services begin scraping information to be passed along (think hunter.io for email addresses)
+2) We manually input the data, such as via a CSV file or a service like AirTable / Google Sheets
+
+Obviously option 1 is a whole other beast that I do not have time to cover in my conference, but I will definitely begin covering later on my blog:
+
+Therefore we will start at option 2 and utilize an AirTable spreadsheet. Airtable is a cloud-based collaboration platform that combines the flexibility of a spreadsheet with the power of a database for organizing and managing data. You are welcome to use Google Sheets or something else if you prefer.
+
+AirTable Setup
+
+Sign Up – Go to airtable.com, create / login to an account using Google, Apple, or your email.
+Create a Workspace – Name it Phishing and continue.
+Create a Base – Click "Create a base", select "Start from scratch", name it, and choose an icon.
+Delete "Notes", "Assignee" and "Status"
+Customize Your Table – Rename "Table 1" to something like "Phishing", and add the following fields:
+
+First Name | Single Line Text
+Last Name | Single Line Text
+Email | Single Line Text
+Description | Long Form Text
+GoPhish Server | Single Line Text | Default: https://<your-public-ip>:3333
+GoPhish Server API Key | Single Line Text | Default: <your-gophish-server-api-key> (I will cover methods of obfuscating data in AirTable at another date)
+Job Title | Single Line Text
+Landing Page URL | Single Line Text | Default: https://<your-domain-name>
+Launch Date | Single Line Text | Default: 0
+Complete Date | Single Line Text | Default: 0
+Send-By Date | Single Line Text | Default: 0
+Landing Page Domain | Single Line Text | Default: <your-domain-name>
+
+Input Data – Click a cell and start entering information. Consider using your email for now as we will want to test it later.
+
+When creating or editing a field, anything we put in the "default" value will automatically populate when a new row is created. If you define another value in Zapier, it will override this value.
+
+Our Zap will start when a new row appears in our Phishing Airtable. How does the data get into this row? This is entirely up to you. For this project, I will have a row of data ready to be used. However, here are some ideas:
+
+Jotform or another form accepting platform > Input data manually to begin the process
+Hunter.io to gather emails
+Dehashed or HaveIBennPwned for specific information types (consider ethics here)
+Public or private data sources / resellers
+Manual information gathering
