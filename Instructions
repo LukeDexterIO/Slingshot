@@ -246,7 +246,7 @@ We’ve noticed attempts to access your account from an unrecognized device, and
 
 To resolve this issue, please follow the link below to verify your account information:
 
-https://170.187.147.199:80
+https://<your-gophish-public-IP>:80
 
 Your prompt attention to this matter will help us safeguard your account, ensuring you remain protected while enjoying the services you rely on. If you have any questions or need assistance, don’t hesitate to reach out.
 
