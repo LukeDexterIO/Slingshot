@@ -99,10 +99,14 @@ Head over to [Zapier](https://zapier.com) and create an account.
    - **Last Name** (Short Text)
    - **Email** (Short Text)
    - **Description** (Long Form Text)
-   - **GoPhish Server URL** (Short Text) [Default Value: <your-gophish-server-url>]
-   - **GoPhish API Key** (Short Text) [Default Value: <your-gophish-server-api-key>]
+   - **GoPhish Server URL** (Short Text) [Default Value: your-gophish-server-url]
+   - **GoPhish API Key** (Short Text) [Default Value: your-gophish-server-api-key]
    - **Job Title** (Short Text)
-   - **Landing Page URL** (Short Text) [Default Value: <your-watering-hole>]
+   - **Landing Page URL** (Short Text) [Default Value: your-watering-hole]
+   - **Launch Date** | Single Line Text | Default Value: 0
+   - **Complete Date** | Single Line Text | Default Value: 0
+   - **Send-By Date** | Single Line Text | Default Value: 0
+   - **Landing Page Domain** | Single Line Text | Default Value: your-domain-name
 
 ---
 
