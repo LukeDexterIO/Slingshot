@@ -149,6 +149,12 @@ While we wait for your domain values to populate, we will set up GoPhish to work
 
 GoPhish MailGun Setup
 
+In MailGun, make sure you are in your domain's settings. Then head to SMTP Credentials.
+
+In the top right, click Add New User. You can name it whatever you want, I chose noreply.
+
+Once you create this user, you will see a notification for the password in the bottom right corner. Copy this password and note it down.
+
 Head over to your GoPhish server. On the left column, navigate to Sending Profiles.
 
 Name: Whatever you want (I chose MailGun for simplicity)
