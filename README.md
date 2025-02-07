@@ -86,7 +86,7 @@ Head over to [Zapier](https://zapier.com) and create an account.
 ### Creating a Zap
 1. Navigate to **Zaps** > **Create New Zap**
 2. Choose **Trigger Event** > **New Record in AirTable**
-3. Connect your **AirTable Account**
+3. Connect your **AirTable Account** (See step 3 for your AirTable setup, then return here)
 4. Select the appropriate **Base** and **Table**
 
 ---
@@ -107,6 +107,7 @@ Head over to [Zapier](https://zapier.com) and create an account.
    - **Complete Date** | Single Line Text | Default Value: 0
    - **Send-By Date** | Single Line Text | Default Value: 0
    - **Landing Page Domain** | Single Line Text | Default Value: your-domain-name
+4. Fill out a dummy row for testing purposes, utilizing your personal details.
 
 ---
 
