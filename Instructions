@@ -161,13 +161,14 @@ Name: Whatever you want (I chose MailGun for simplicity)
 Interface Type: SMTP (default)
 SMTP From: Who the user is receiving the email from (I chose noreply@vonohi.com, but you can use chuck@yourdomain.com or whatever you want. Make sure you use an email with your domain name to bypass SPF checks)
 Host: smtp.mailgun.org:25 (this is found under your domain settings in mailgun, under SMTP settings)
-Password: In MailGun, under SMTP credentials, click "Add new SMTP user" in the top right. You will only need the first part of the email (such as noreply). You will be given a password which can be copied in the bottom right corner of the screen. This is the same password for the GoPhish sending profile.
+Password: The password from the MailGun user that we copied / created several steps ago
+
 For now, make sure that Ignore Certificate Errors is checked. If you are setting this up long term, I will provide a guide for permanent infrastructure later.
 Save the sending profile in GoPhish. We will test this later once all domain values have populated.
 
 Working With Zapier
 
-Now it is time for Zapier action. We need 2 items: The CSRF Token we created earlier, and the API Key from our GoPhish server. To get the GoPhish API Key, go to Account Settings in GoPhish, then note down the key.
+Now it is time for Zapier action. We will need the API Key from our GoPhish server. To get the GoPhish API Key, go to Account Settings in GoPhish, then note down the key.
 
 You should be on your first Zap in Zapier. Since time is limited and we can't build a form or quickly integrate some other platform, our Trigger event will be a New Record in AirTable.
 
