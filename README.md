@@ -16,7 +16,7 @@ By utilizing Zapier, a cloud host (AWS/Linode), and GoPhish, ethical hackers and
 ## Setup Instructions
 
 ### Step 1: Deploying GoPhish
-We will start with creating the heart of our machine, the GoPhish server. For this, we will need a public Ubuntu 22.04+ machine. Linode is recommended for simplicity as AWS SMTP hosting has restrictions (MailGun will be used instead).
+We will start with creating the heart of our machine, the GoPhish server. For this, we will need a public Ubuntu 22.04+ machine. Linode will be used during the presentation.
 
 If unfamiliar with setting up a basic cloud instance in Linode, refer to the guide here: **[Add link to guide]**
 
@@ -92,17 +92,17 @@ Head over to [Zapier](https://zapier.com) and create an account.
 ---
 
 ## Step 3: AirTable Setup
-1. Sign up at [AirTable](https://airtable.com) and create a new workspace.
+1. Sign up at [AirTable](https://airtable.com/invite/r/FS6fwe43) and create a new workspace.
 2. Create a base called **Phishing**.
 3. Create a new table with the following fields:
-   - **First Name** (Text)
-   - **Last Name** (Text)
-   - **Email** (Text)
+   - **First Name** (Short Text)
+   - **Last Name** (Short Text)
+   - **Email** (Short Text)
    - **Description** (Long Form Text)
-   - **GoPhish Server URL** (Text)
-   - **GoPhish API Key** (Text)
-   - **Job Title** (Text)
-   - **Landing Page URL** (Text)
+   - **GoPhish Server URL** (Short Text) [Default Value: <your-gophish-server-url>]
+   - **GoPhish API Key** (Short Text) [Default Value: <your-gophish-server-api-key>]
+   - **Job Title** (Short Text)
+   - **Landing Page URL** (Short Text) [Default Value: <your-watering-hole>]
 
 ---
 
