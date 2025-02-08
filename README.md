@@ -1,4 +1,4 @@
-# AI Automated Spear Phishing with Zapier, GoPhish, and Cloud Hosting
+# AI Automated Spear Phishing with Zapier & GoPhish
 
 ## Overview
 By utilizing Zapier, a cloud host (AWS/Linode), and GoPhish, ethical hackers and red teamers can create highly detailed spear phishing emails quickly and en masse. Many possible options exist, and this project will continue to receive advancements.
