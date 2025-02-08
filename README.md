@@ -5,13 +5,15 @@ By utilizing Zapier, a cloud host (AWS/Linode), and GoPhish, ethical hackers and
 
 ## Requirements
 - A cloud host account (AWS, Linode, or your preference)
-- Publicly facing Ubuntu machine (22.04+) with an IPv4 address for simplicity
+- Public facing Ubuntu machine (22.04+) with an IPv4 address for simplicity
 - Unused domain name
 - Zapier account
 - AirTable Account
 - MailGun Account
 
 ---
+
+## [Click Here For Detailed Instructions](https://github.com/LukeDexterIO/AI-Automated-Spear-Phishing/blob/main/Detailed%20Instructions)
 
 ## Setup Instructions
 
