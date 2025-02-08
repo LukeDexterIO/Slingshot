@@ -178,10 +178,11 @@ Using Zapier Webhooks:
 ---
 
 ## Next Steps
-From here, you can further automate:
-- **Adding Target Groups**
-- **Launching Campaigns**
-- **Tracking Responses**
+From here, you can:
+- **Add Target Groups**
+- **Retrieve SMTP Profile ID**
+- **Launch Campaigns (Send The Email)**
+- **Track Responses**
 
 More enhancements will be covered on my blog: **[Add blog link]**
 
