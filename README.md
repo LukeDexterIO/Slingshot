@@ -15,7 +15,6 @@ By utilizing Zapier, a cloud host (AWS/Linode), and GoPhish, ethical hackers and
 
 ## [Click Here For Detailed Instructions](https://github.com/LukeDexterIO/AI-Automated-Spear-Phishing/blob/main/Detailed%20Instructions)
 
----
 
 ## Quick Setup Instructions
 
