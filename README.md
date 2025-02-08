@@ -15,7 +15,9 @@ By utilizing Zapier, a cloud host (AWS/Linode), and GoPhish, ethical hackers and
 
 ## [Click Here For Detailed Instructions](https://github.com/LukeDexterIO/AI-Automated-Spear-Phishing/blob/main/Detailed%20Instructions)
 
-## Setup Instructions
+---
+
+## Quick Setup Instructions
 
 ### Step 1: Deploying GoPhish
 We will start with creating the heart of our machine, the GoPhish server. For this, we will need a public Ubuntu 22.04+ machine. Linode will be used during the presentation.
