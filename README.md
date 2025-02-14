@@ -1,7 +1,7 @@
 # Slingshot - AI Automated Spear Phishing with Zapier
 
 ## Overview
-By utilizing Zapier, JotForm, and MailGun, ethical hackers can create highly detailed spear phishing emails quickly and en masse. Many possible options exist, and this project will continue to receive advancements.
+By utilizing Zapier, JotForm, and MailGun, ethical hackers can create highly detailed spear phishing emails quickly and en masse. Many possible options exist, and you can greatly expand this project to meet many unique needs.
 
 ## Requirements
 - JotForm Account
